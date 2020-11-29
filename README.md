@@ -8,15 +8,10 @@ Self-replication contest
 
 xxxx
 
-
----
-
 ### Usage
 
 ```
 ```
-
----
 
 ### Installation
 
@@ -35,28 +30,47 @@ $ sudo apt-get install gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libc
 $ npm install puppeteer puppeteer-cluster
 ```
 
----
-
 ### Cron
 
 ```
+$ crontab -e
+$ */5 * * * * node /home/xssworm/cluster.js
+$ crontab -l
 ```
-
----
 
 ### Nginx config
 
 ```
-```
+server {
+	listen 80 default_server;
 
----
+	server_name "xssworm.dev";
+
+	location / {
+		# First attempt to serve request as file, then
+		# as directory, then fall back to displaying a 404.
+		#try_files $uri $uri/ =404;
+		proxy_pass       http://127.0.0.1:3000;
+		proxy_set_header Host      $host;
+		proxy_set_header X-Real-IP $remote_addr;
+
+		add_header 'Access-Control-Allow-Origin' '*';
+                add_header X-Frame-Options DENY;
+                add_header X-Content-Type-Options nosniff;
+                add_header X-XSS-Protection "0";
+                add_header Strict-Transport-Security "max-age=1337; includeSubdomains; preload";
+                add_header Referrer-Policy "no-referrer";
+                add_header Permissions-Policy "document-write 'none'";
+                add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; img-src 'self' data: https://validator.swagger.io; frame-src https://validator.swagger.io; font-src 'self' https://fonts.gstatic.com";
+	}
+}
+```
 
 ### MySQL database
 
 ```
 ```
 
----
-
 ## References
 
+https://vavkamil.cz/blog/xxx
