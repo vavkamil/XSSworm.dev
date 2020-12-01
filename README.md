@@ -6,7 +6,7 @@ Self-replication contest
 
 ## Description
 
-xxxx
+I created “CTF” style challenge for our OWASP Czech Chapter Virtual Meeting. The goal was to write an XSS worm and score points by infecting 1k virtual users.
 
 ### XSS Worm PoC
 
@@ -128,4 +128,4 @@ $ show variables like "max_connections";
 
 ## References
 
-https://vavkamil.cz/blog/xxx
+https://vavkamil.cz/2020/12/01/xss-worm-dev-self-replication-contest-write-up/
