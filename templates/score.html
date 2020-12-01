@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<!--
+	Arcana by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>XSSworm.dev | Score</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static',filename='assets/css/main.css') }}" />
+		    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static',filename='favicon.ico') }}" />
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header">
+
+					<!-- Logo -->
+						<h1><a href="/" id="logo">XSS Worm<em> .dev</em></a></h1>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="/">Home</a></li>
+								<li class="current"><a href="/score">Score</a></li>
+								<li><a href="/login">Login</a></li>
+								<li><a href="/send-message">Messages</a></li>
+								<li><a href="/rules">Rules</a></li>
+								<li><a href="/faq">FAQ</a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+
+
+		<style>
+			.item{
+				background-color: red;
+			}
+
+			SquareGrid {
+				--content-width: 1200px;
+				--gutter: 3px;
+				--columns: 50;
+				--row-size: calc(
+					( var(--content-width) - (var(--gutter) * (var(--columns) - 1))
+					) / var(--columns)
+				);
+				display: grid;
+				width: 100%;
+				max-width: var(--content-width);
+				grid-template-columns: repeat(var(--columns), 1fr);
+				grid-auto-rows: var(--row-size);
+				grid-column-gap: var(--gutter);
+				grid-row-gap: var(--gutter);
+			}
+
+
+			table, th, td {
+			  border: 1px solid black;
+			  border-collapse: collapse;
+			}
+			th, td {
+			  padding: 5px;
+			  text-align: left;
+			}
+			table#score tr:nth-child(even) {
+			  background-color: #eee;
+			}
+			table#score tr:nth-child(odd) {
+			 background-color: #fff;
+			}
+			table#score th {
+			  background-color: black;
+			  color: white;
+			}
+		</style>
+		<script>
+			setTimeout(function(){
+			   window.location.reload(1);
+			}, 60000);
+		</script>
+
+			<!-- Main -->
+				<section class="wrapper style1">
+					<div class="container">
+						<div class="row gtr-200">
+							<div class="col-8 col-12-narrower">
+								<div id="content">
+
+									<!-- Content -->
+
+										<article>
+											<header>
+												<h2>Infected victims</h2>
+												<p>There is 1k users, Gotta Infect 'Em All</p>
+											</header>
+
+			<SquareGrid>
+
+				{% for row in result %}
+					<div style="background-color:{{ row.color }};border:1px dashed black" title="{{ row.id }}"></div>
+				{% endfor %}
+
+			</SquareGrid>
+
+
+
+										</article>
+
+								</div>
+							</div>
+							<div class="col-4 col-12-narrower">
+								<div id="sidebar">
+
+									<!-- Sidebar -->
+
+										<section>
+											<h3>Leaderboard</h3>
+											<table id="score"><strong>There can only be one winner</strong>
+												<tr>
+													<th></th>
+									        		<th>Color</th>
+									        		<th>Username</th>
+									        		<th>Score</th>
+									      		</tr>
+
+												{% for row in result2 %}
+													<tr>
+														<td style="background-color: {{ row.color }};"></td>
+														<td>{{ row.color }}</td>
+														<td>{{ row.username }}</td>
+														<td>{{ row['count(victims.color)']}}</td>
+													</tr>
+												{% endfor %}
+												<tr><td colspan="4"><a href="/jsonp" target="_blank">https://xssworm.dev/jsonp</a></td></tr>
+											</table>
+
+											<footer>
+												<a href="/login" class="button">Register</a> <a href="/rules" class="button">Rules</a>
+											</footer>
+										</section>
+
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+				<div id="footer">
+
+					<!-- Icons -->
+						<ul class="icons">
+							<li><a target="_blank" href="https://github.com/vavkamil" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+							<li><a target="_blank" href="https://twitter.com/vavkamil" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a target="_blank" href="https://vavkamil.cz" class="icon brands fa-blogger"><span class="label">Blog</span></a></li>
+							<li><a target="_blank" href="https://reddit.com/r/bugbounty" class="icon brands fa-reddit"><span class="label">Reddit</span></a></li>
+						</ul>
+
+					<!-- Copyright -->
+						<div class="copyright">
+							<ul class="menu">
+								<li>&#127279; 2020. No rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="{{ url_for('static',filename='assets/js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/jquery.dropotron.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/browser.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/breakpoints.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/util.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/main.js') }}"></script>
+
+	</body>
+</html>

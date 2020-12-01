@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<!--
+	Arcana by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>XSSworm.dev | Rules</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static',filename='assets/css/main.css') }}" />
+		<link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static',filename='favicon.ico') }}" />
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header">
+
+					<!-- Logo -->
+						<h1><a href="/" id="logo">XSS Worm<em> .dev</em></a></h1>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="/">Home</a></li>
+								<li><a href="/score">Score</a></li>
+								<li><a href="/login">Login</a></li>
+								<li><a href="/send-message">Messages</a></li>
+								<li class="current"><a href="/rules">Rules</a></li>
+								<li><a href="/faq">FAQ</a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+			<!-- Main -->
+				<section class="wrapper style1">
+					<div class="container">
+						<div class="row gtr-200">
+							<div class="col-3 col-12-narrower">
+								<div id="sidebar1">
+
+									<!-- Sidebar 1 -->
+
+										<section>
+											<h3>When?</h3>
+											<p>Tue, December 1, 2020</p>
+										</section>
+
+										<section>
+											<h3>Start time?</h3>
+											<p>8:00 AM, (CET)</p>
+										</section>
+
+										<section>
+											<h3>End time?</h3>
+											<p>7:30 PM, (CET)</p>
+											<footer>
+												<a target="_blank" href="https://twitter.com/OWASP_Czech">@OWASP_Czech</a>
+												<a target="_blank" href="https://www.eventbrite.com/e/owasp-czech-chapter-virtual-meeting-registration-129038490599" class="button">OWASP Czech Chapter Virtual Meeting</a>
+											</footer>
+										</section>
+
+								</div>
+							</div>
+							<div class="col-6 col-12-narrower imp-narrower">
+								<div id="content">
+
+									<!-- Content -->
+
+										<article>
+											<header>
+												<h2>Follow the rules</h2>
+												<p>Cheating is discouraged</p>
+											</header>
+
+											<ol>
+												<li>Pick a team color, exploit XSS vulnerability, write XSS worm</li>
+												<li>The payload must change a victim's color by CSRF and self-propagate the worm via private messages</li>
+												<li>You can send only 13 messages, only the last received message will be read by the victim</li>
+												<li>Victims don't have any messages limit, once the worm is out, the infection will spread</li>
+												<li>Headless chrome will read the messages and execute the last received payloads every ~X minutes in a random sequence</li>
+												<li>You have ~12 hours to infect most victims, strategy is the key to win this</li>
+												<li>Good luck & have fun!</li>
+											</ol>
+
+										</article>
+
+								</div>
+							</div>
+							<div class="col-3 col-12-narrower">
+								<div id="sidebar2">
+
+									<!-- Sidebar 2 -->
+
+										<section>
+											<h3>Prizes</h3>
+											<ul class="links">
+												<li><a target="_blank" href="https://www.google.com/search?q=0.001337+btc+to+usd">[1.] 0.001337 BTC</a></li>
+												<li><a target="_blank" href="https://www.google.com/search?q=0.00031337+btc+to+usd">[2.] 0.00031337 BTC</a></li>
+												<li><a target="_blank" href="https://www.google.com/search?q=0.0001337+btc+to+usd">[3.] 0.0001337 BTC</a></li>
+											</ul>
+											<footer>
+												<a target="_blank" href="https://www.blockchain.com/btc/address/3AtMu7q9SKUD182Q6aho7UvWhuEfRWWpdK" class="button">Donations are welcome</a>
+											</footer>
+										</section>
+
+										<section>
+											<h3>Winners</h3>
+											<p>Prizes will be distributed among the three people which will infect most of the victims at the end of the event. In case someone will be able to infect all of the victims, only the first prize will be awarded. No idea how the tie (draw) will work.</p>
+										</section>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+				<div id="footer">
+
+					<!-- Icons -->
+						<ul class="icons">
+							<li><a target="_blank" href="https://github.com/vavkamil" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+							<li><a target="_blank" href="https://twitter.com/vavkamil" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a target="_blank" href="https://vavkamil.cz" class="icon brands fa-blogger"><span class="label">Blog</span></a></li>
+							<li><a target="_blank" href="https://reddit.com/r/bugbounty" class="icon brands fa-reddit"><span class="label">Reddit</span></a></li>
+						</ul>
+
+					<!-- Copyright -->
+						<div class="copyright">
+							<ul class="menu">
+								<li>&#127279; 2020. No rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="{{ url_for('static',filename='assets/js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/jquery.dropotron.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/browser.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/breakpoints.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/util.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/main.js') }}"></script>
+
+	</body>
+</html>

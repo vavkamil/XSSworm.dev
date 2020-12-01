@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<!--
+  Arcana by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>XSSworm.dev | Messages</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/main.css') }}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static',filename='favicon.ico') }}" />
+  </head>
+  <body class="is-preload">
+    <div id="page-wrapper">
+
+      <!-- Header -->
+        <div id="header">
+
+          <!-- Logo -->
+            <h1><a href="/" id="logo">XSS Worm<em> .dev</em></a></h1>
+
+          <!-- Nav -->
+            <nav id="nav">
+              <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/score">Score</a></li>
+                <li><a href="/login">Login</a></li>
+                <li class="current"><a href="/send-message">Messages</a></li>
+                <li><a href="/rules">Rules</a></li>
+                <li><a href="/faq">FAQ</a></li>
+              </ul>
+            </nav>
+
+        </div>
+
+      <!-- Main -->
+        <section class="wrapper style1">
+          <div class="container">
+            <div class="row gtr-200">
+              <div class="col-4 col-12-narrower">
+                <div id="sidebar">
+
+                  <!-- Sidebar -->
+
+                    <section>
+                      <h3>Forgot your password?</h3>
+                      <p>That's a problem, as we didn't implement the reset password functionality.</p>
+
+                      <h3>Password requirements?</h3>
+                      <p>It's up to you, but we didn't implement any brute-force protections.</p>
+
+                      <h3>Team color?</h3>
+                      <p>It really doesn't matter what you pick, it's only to better visualize the spread of the infections.</p>
+
+                      <h3>Username?</h3>
+                      <p>Limited to 20 characters, use your Twitter handle or something politically correct.</p>
+
+                      <h3>Cheating?</h3>
+                      <p>We are here to have fun, so don't go crazy with the ammount of registered accounts.</p>
+
+
+                    </section>
+
+                </div>
+              </div>
+            <div class="col-8  col-12-narrower imp-narrower">
+              <div id="content">
+
+                <!-- Content -->
+
+                  <article>
+                    <header>
+                      <h2>Send message</h2>
+                      <p>Username: {{ username }}</p>
+                      <p>Color: {{ color }}</p>
+                      <p>Remaining messages: {{ remaining }}</p>
+                    </header>
+
+
+
+<form method="POST" action="#">
+
+
+<label for="id">Recipient ID</label>
+<input type="text" list="your-data-list" id="id" name="id" autocomplete="off" oninput="myFunction()"/>
+<datalist id="your-data-list" name="datalist"></datalist>
+
+<br><br>
+
+
+<label for="msg">Message</label>
+<textarea id="msg" name="msg" rows="8" cols="75"></textarea> 
+
+<br><br>
+
+<button id="button" disabled>Send</button>
+
+</form>
+
+<br>
+
+<script>
+
+var datalist = document.getElementById('your-data-list');
+for (var i = 0; i < 1000; ++i) {
+    var option = document.createElement('option');
+    
+    var value = 
+        i === i ? i :
+        9999;
+
+    option.value = value;
+    datalist.appendChild(option);
+    
+
+}
+
+function myFunction() {
+  var input_value = document.getElementById('id').value;
+  if(input_value >= 1 && input_value <= 1000) {
+    console.log("ok")
+    document.getElementById('button').disabled = false;
+  }
+  else {
+  console.log("not ok")
+  document.getElementById('button').disabled = true;
+  }
+}
+</script>
+
+
+                </article>
+
+            </div>
+
+            </div>
+
+          </div>
+
+    <script src="//unpkg.com/swagger-ui-dist@3/swagger-ui-standalone-preset.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/3.22.1/swagger-ui-standalone-preset.js"></script> -->
+    <script src="//unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/3.22.1/swagger-ui-bundle.js"></script> -->
+    <link rel="stylesheet" href="//unpkg.com/swagger-ui-dist@3/swagger-ui.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/3.22.1/swagger-ui.css" /> -->
+
+
+    <div id="swagger-ui"></div>
+    <script>
+        window.onload = function() {
+          SwaggerUIBundle({
+            url: "/static/swagger.yaml",
+            dom_id: '#swagger-ui',
+            presets: [
+              SwaggerUIBundle.presets.apis,
+              SwaggerUIStandalonePreset
+            ],
+            layout: "StandaloneLayout"
+          })
+        }
+    </script>
+        </section>
+
+      <!-- Footer -->
+        <div id="footer">
+
+          <!-- Icons -->
+            <ul class="icons">
+              <li><a target="_blank" href="https://github.com/vavkamil" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+              <li><a target="_blank" href="https://twitter.com/vavkamil" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+              <li><a target="_blank" href="https://vavkamil.cz" class="icon brands fa-blogger"><span class="label">Blog</span></a></li>
+              <li><a target="_blank" href="https://reddit.com/r/bugbounty" class="icon brands fa-reddit"><span class="label">Reddit</span></a></li>
+            </ul>
+
+          <!-- Copyright -->
+            <div class="copyright">
+              <ul class="menu">
+                <li>&#127279; 2020. No rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+              </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+      <script src="{{ url_for('static',filename='assets/js/jquery.min.js') }}"></script>
+      <script src="{{ url_for('static',filename='assets/js/jquery.dropotron.min.js') }}"></script>
+      <script src="{{ url_for('static',filename='assets/js/browser.min.js') }}"></script>
+      <script src="{{ url_for('static',filename='assets/js/breakpoints.min.js') }}"></script>
+      <script src="{{ url_for('static',filename='assets/js/util.js') }}"></script>
+      <script src="{{ url_for('static',filename='assets/js/main.js') }}"></script>
+
+  </body>
+</html>

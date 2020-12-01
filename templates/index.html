@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<!--
+	Arcana by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>XSSworm.dev</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static',filename='assets/css/main.css') }}" />
+		<link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static',filename='favicon.ico') }}" />
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header">
+
+					<!-- Logo -->
+						<h1><a href="/" id="logo">XSS Worm<em> .dev</em></a></h1>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li class="current"><a href="/">Home</a></li>
+								<li><a href="/score">Score</a></li>
+								<li><a href="/login">Login</a></li>
+								<li><a href="/send-message">Messages</a></li>
+								<li><a href="/rules">Rules</a></li>
+								<li><a href="/faq">FAQ</a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+			<!-- Banner -->
+				<section id="banner">
+					<header>
+						<h2>XSSworm.dev: <em>Self-replication contest</em></h2>
+						<a href="/faq" class="button">FAQ</a>
+					</header>
+				</section>
+
+			<!-- Highlights -->
+				<section class="wrapper style1">
+					<div class="container">
+						<div class="row gtr-200">
+							<section class="col-4 col-12-narrower">
+								<div class="box highlight">
+									<i class="icon solid major fa-paper-plane"></i>
+									<h3>Find XSS Vector</h3>
+									<p>Are you experienced in Cross-Site Scripting attacks? Then it shouldn't be that hard to exploit this vulnerability.</p>
+								</div>
+							</section>
+							<section class="col-4 col-12-narrower">
+								<div class="box highlight">
+									<i class="icon solid major fa-pencil-alt"></i>
+									<h3>Write XSS Worm</h3>
+									<p>But how about writing a self-propagating JavaScript malware? Can you turn alert(0) into a dangerous XSS worm?</p>
+								</div>
+							</section>
+							<section class="col-4 col-12-narrower">
+								<div class="box highlight">
+									<i class="icon solid major fa-wrench"></i>
+									<h3>Gotta Infect 'Em All</h3>
+									<p>1k victims is waiting to get infected! But you must think outside the box, it won't be that easy ... #challengeaccepted</p>
+								</div>
+							</section>
+						</div>
+					</div>
+				</section>
+
+
+			<!-- CTA -->
+				<section id="cta" class="wrapper style3">
+					<div class="container">
+						<header>
+							<h2>Shall we play a game?</h2>
+							<a href="/login" class="button">Register</a>
+						</header>
+					</div>
+				</section>
+
+			<!-- Gigantic Heading -->
+				<section class="wrapper style2">
+					<div class="container">
+						<header class="major">
+							<h2>XSS Worm .dev</h2>
+							<p>Self-replication contest</p>
+						</header>
+					</div>
+				</section>
+
+
+
+
+
+			<!-- Footer -->
+				<div id="footer">
+
+					<!-- Icons -->
+						<ul class="icons">
+							<li><a target="_blank" href="https://github.com/vavkamil" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+							<li><a target="_blank" href="https://twitter.com/vavkamil" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a target="_blank" href="https://vavkamil.cz" class="icon brands fa-blogger"><span class="label">Blog</span></a></li>
+							<li><a target="_blank" href="https://reddit.com/r/bugbounty" class="icon brands fa-reddit"><span class="label">Reddit</span></a></li>
+						</ul>
+
+					<!-- Copyright -->
+						<div class="copyright">
+							<ul class="menu">
+								<li>&#127279; 2020. No rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="{{ url_for('static',filename='assets/js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/jquery.dropotron.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/browser.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/breakpoints.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/util.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/main.js') }}"></script>
+
+	</body>
+</html>

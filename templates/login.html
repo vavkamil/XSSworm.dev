@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<!--
+	Arcana by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>XSSworm.dev | Login</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static',filename='assets/css/main.css') }}" />
+		<link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static',filename='favicon.ico') }}" />
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header">
+
+					<!-- Logo -->
+						<h1><a href="/" id="logo">XSS Worm<em> .dev</em></a></h1>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="/">Home</a></li>
+								<li><a href="/score">Score</a></li>
+								<li class="current"><a href="/login">Login</a></li>
+								<li><a href="/send-message">Messages</a></li>
+								<li><a href="/rules">Rules</a></li>
+								<li><a href="/faq">FAQ</a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+			<!-- Main -->
+				<section class="wrapper style1">
+					<div class="container">
+						<div class="row gtr-200">
+							<div class="col-4 col-12-narrower">
+								<div id="sidebar">
+
+									<!-- Sidebar -->
+
+										<section>
+											<h3>Forgot your password?</h3>
+											<p>That's a problem, as we didn't implement the reset password functionality.</p>
+
+											<h3>Password requirements?</h3>
+											<p>It's up to you, but we didn't implement any brute-force protections.</p>
+
+											<h3>Team color?</h3>
+											<p>It really doesn't matter what you pick, it's only to better visualize the spread of the infections.</p>
+
+											<h3>Username?</h3>
+											<p>Limited to 20 characters, use your Twitter handle or something politically correct.</p>
+
+											<h3>Cheating?</h3>
+											<p>We are here to have fun, so don't go crazy with the ammout of registered accounts.</p>
+										</section>
+
+								</div>
+							</div>
+							<div class="col-8  col-12-narrower imp-narrower">
+								<div id="content">
+
+									<!-- Content -->
+									{{ check|safe }}
+
+										<article>
+											<header>
+												<h2>Sign in</h2>
+												<p>Continue to your account</p>
+											</header>
+
+											<form action="/login" method="POST">
+											  <label for="username">Username</label>
+											  <input type="text" name="username" id="username" value=""><br>
+											  <label for="password">Password</label>
+											  <input type="password" name="password" id="password" value=""><br>
+											  <input type="submit" value="Login">
+											</form> 
+											<br>
+
+											<h3>Don't have an account?</h3>
+											<script>
+												window.addEventListener('load', function () {
+													const randomColor = Math.floor(Math.random()*16777215).toString(16);
+													document.getElementById("color").value = "#"+randomColor;
+												});
+											</script>
+
+											<form action="/register" method="POST">
+											  <label for="username">Username</label>
+											  <input type="text" name="username" id="username" maxlength="20" value="" required><br>
+											  <label for="color">Team color</label>
+											  <input type="color" name="color" id="color" value="" required><br>
+											  <label for="password">Password</label>
+											  <input type="password" name="password" id="pass" required><br>
+											  <label for="password2">Confirm password</label>
+											  <input type="password" name="password2" id="pass2" required><br>
+											  <input type="submit" value="Register">
+											</form> 
+
+											<script>
+												var password = document.getElementById("pass")
+												  , confirm_password = document.getElementById("pass2");
+
+												function validatePassword(){
+												  if(password.value != confirm_password.value) {
+												    confirm_password.setCustomValidity("Passwords Don't Match");
+												  } else {
+												    confirm_password.setCustomValidity('');
+												  }
+												}
+
+												password.onchange = validatePassword;
+												confirm_password.onkeyup = validatePassword;
+											</script>
+										</article>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+				<div id="footer">
+
+					<!-- Icons -->
+						<ul class="icons">
+							<li><a target="_blank" href="https://github.com/vavkamil" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+							<li><a target="_blank" href="https://twitter.com/vavkamil" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a target="_blank" href="https://vavkamil.cz" class="icon brands fa-blogger"><span class="label">Blog</span></a></li>
+							<li><a target="_blank" href="https://reddit.com/r/bugbounty" class="icon brands fa-reddit"><span class="label">Reddit</span></a></li>
+						</ul>
+
+					<!-- Copyright -->
+						<div class="copyright">
+							<ul class="menu">
+								<li>&#127279; 2020. No rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="{{ url_for('static',filename='assets/js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/jquery.dropotron.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/browser.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/breakpoints.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/util.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/main.js') }}"></script>
+
+	</body>
+</html>
