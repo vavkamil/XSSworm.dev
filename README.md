@@ -54,11 +54,6 @@ I created “CTF” style challenge for our OWASP Czech Chapter Virtual Meeting.
 </script>
 ```
 
-### Usage
-
-```
-```
-
 ### Installation
 
 ```
