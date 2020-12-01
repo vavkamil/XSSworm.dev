@@ -1,0 +1,50 @@
+---
+openapi: 3.0.1
+info:
+  title: XSS worm .dev
+  description: Self-replication contest
+  version: "0.1"
+servers:
+- url: https://xssworm.dev
+paths:
+  /update:
+    post:
+      description: Endpoint for victims to change profile color
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: string
+            examples:
+              "0":
+                value: color=#000000
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            text/html; charset=utf-8:
+              schema:
+                type: string
+              examples: {}
+      servers:
+      - url: https://xssworm.dev
+    servers:
+    - url: https://xssworm.dev
+  /send-message:
+    post:
+      description: Endpoint for users/victims to send messages
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: string
+            examples:
+              "0":
+                value: id=42&msg=xss
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+      servers:
+      - url: https://xssworm.dev
+    servers:
+    - url: https://xssworm.dev
